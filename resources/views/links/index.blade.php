@@ -10,7 +10,14 @@
                     <form action="{{ route('store') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <input type="text" class="form-control" name="url" placeholder="Paste a link to shorten it">
+                            <input type="text" class="form-control {{ $errors->has('url') ? ' is-invalid' : '' }}"
+                                   name="url" value="{{ old('url') }}" placeholder="Paste a link to shorten it">
+
+                            @if ($errors->has('url'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('url') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                         <div class="form-group text-center">
                             <input type="submit" value="Submit" class="btn btn-lg btn-success">
