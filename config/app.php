@@ -174,7 +174,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // My Provider
+        App\Providers\UrlShortenerProvider::class,
+        App\Providers\EncryptionProvider::class
     ],
 
     /*

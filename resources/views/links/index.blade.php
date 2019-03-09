@@ -23,6 +23,10 @@
                             <input type="submit" value="Submit" class="btn btn-lg btn-success">
                         </div>
                     </form>
+                    @if(session()->has('shortLink'))
+                        <h3 class="text-center"> Short URL:
+                            <a href="{{ session()->get('shortLink') }}" target="_blank">{{ session()->get('shortLink') }}</a></h3>
+                    @endif
                 </div>
             </div>
         </div>
