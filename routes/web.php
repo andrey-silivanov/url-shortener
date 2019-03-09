@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'as'   => 'main',
+    'uses' => 'LinkController@index'
+]);
+
+Route::post('/store', [
+    'as'   => 'store',
+    'uses' => 'LinkController@store'
+]);
+
+Route::get('/{shortCode}', [
+   'as' => 'redirect',
+   'uses' => 'LinkController@redirect'
+]);
