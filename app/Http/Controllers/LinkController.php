@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Contracts\URLShortener\UrlShortenerContract,
-    App\Http\Requests\LinkRequest,
-    Illuminate\Http\RedirectResponse,
-    Illuminate\View\View;
+use App\Contracts\URLShortener\UrlShortenerContract;
+use App\Http\Requests\LinkRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 /**
  * Class LinkController

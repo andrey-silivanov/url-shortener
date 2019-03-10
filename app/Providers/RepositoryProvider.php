@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Contracts\Repositories\LinkRepositoryContract,
-    App\Repositories\LinkRepository,
-    Illuminate\Support\ServiceProvider;
+use App\Contracts\Repositories\LinkRepositoryContract;
+use App\Repositories\LinkRepository;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Class RepositoryProvider
@@ -13,16 +13,6 @@ use App\Contracts\Repositories\LinkRepositoryContract,
  */
 class RepositoryProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
     /**
      * Bootstrap services.
      *

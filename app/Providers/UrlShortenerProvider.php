@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Contracts\URLShortener\UrlShortenerContract,
-    App\Services\URLShortener\UrlShortener,
-    Illuminate\Support\ServiceProvider;
+use App\Contracts\URLShortener\UrlShortenerContract;
+use App\Services\URLShortener\UrlShortener;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Class UrlShortenerProvider
@@ -13,16 +13,6 @@ use App\Contracts\URLShortener\UrlShortenerContract,
  */
 class UrlShortenerProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register(): void
-    {
-        //
-    }
-
     /**
      * Bootstrap services.
      *

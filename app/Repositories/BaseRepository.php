@@ -12,12 +12,13 @@ use Illuminate\Database\Eloquent\Model;
 abstract class BaseRepository
 {
     /**
+     * Model name
      * @var Model
      */
     private $model;
 
     /**
-     * BaseRepository constructor.
+     * BaseRepository constructor
      */
     public function __construct()
     {
@@ -25,9 +26,11 @@ abstract class BaseRepository
     }
 
     /**
-     * @return mixed
+     * Return name model
+     *
+     * @return string
      */
-    abstract protected function getModelClass();
+    abstract protected function getModelClass(): string;
 
     /**
      * @return Model

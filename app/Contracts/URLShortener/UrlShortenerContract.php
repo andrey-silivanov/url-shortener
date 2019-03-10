@@ -15,7 +15,7 @@ interface UrlShortenerContract
      * @param string $url
      * @return string
      */
-    public function getShortUrl(string $url):string;
+    public function getShortUrl(string $url): string;
 
     /**
      * Return long url
@@ -23,5 +23,5 @@ interface UrlShortenerContract
      * @param string $shortCode
      * @return string
      */
-    public function getLongUrl(string $shortCode):string;
+    public function getLongUrl(string $shortCode): string;
 }

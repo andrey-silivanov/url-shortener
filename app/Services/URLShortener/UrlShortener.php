@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace App\Services\URLShortener;
 
-use App\Contracts\Encryption\EncryptionContract,
-    App\Contracts\URLShortener\UrlShortenerContract,
-    App\Contracts\Repositories\LinkRepositoryContract,
-    Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use App\Contracts\Encryption\EncryptionContract;
+use App\Contracts\Repositories\LinkRepositoryContract;
+use App\Contracts\URLShortener\UrlShortenerContract;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Class UrlShortener
@@ -24,8 +24,10 @@ class UrlShortener implements UrlShortenerContract
     private $linkRepository;
 
     /**
-     * UrlShortener constructor.
+     * UrlShortener constructor
+     *
      * @param EncryptionContract $encryptionContract
+     * @param LinkRepositoryContract $linkRepository
      */
     public function __construct(EncryptionContract $encryptionContract, LinkRepositoryContract $linkRepository)
     {
@@ -35,6 +37,7 @@ class UrlShortener implements UrlShortenerContract
 
     /**
      * Return short url
+     *
      * @param string $url
      * @return string
      */
@@ -44,11 +47,12 @@ class UrlShortener implements UrlShortenerContract
             'url' => $url
         ]);
 
-        return url($this->encryption->encode((string) $link->getKey()));
+        return url($this->encryption->encode((string)$link->getKey()));
     }
 
     /**
      * Return long url
+     *
      * @param string $shortCode
      * @return string
      */
@@ -58,7 +62,7 @@ class UrlShortener implements UrlShortenerContract
 
         $link = $this->linkRepository->findById((int)$id);
 
-        if($link === null) {
+        if ($link === null) {
             throw new NotFoundHttpException();
         }
 
