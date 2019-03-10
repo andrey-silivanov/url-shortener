@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use App\Contracts\URLShortener\UrlShortenerContract,
     App\Http\Requests\LinkRequest,
-    App\Models\Link,
     Illuminate\Http\RedirectResponse,
     Illuminate\View\View;
 
@@ -16,7 +15,7 @@ use App\Contracts\URLShortener\UrlShortenerContract,
 class LinkController extends Controller
 {
     /**
-     * Return main page
+     * Show form
      *
      * @return View
      */
@@ -32,13 +31,9 @@ class LinkController extends Controller
      * @param UrlShortenerContract $shortener
      * @return RedirectResponse
      */
-    public function store(LinkRequest $request, UrlShortenerContract $shortener)
+    public function store(LinkRequest $request, UrlShortenerContract $shortener): RedirectResponse
     {
-        $linkId = Link::firstOrCreate([
-            'url' => $request->get('url')
-        ]);
-
-        $url = $shortener->getShortUrl($linkId->getKey());
+        $url = $shortener->getShortUrl($request->get('url'));
 
         return redirect()->back()->with('shortLink', $url);
     }

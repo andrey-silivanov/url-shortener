@@ -176,7 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         // My Provider
         App\Providers\UrlShortenerProvider::class,
-        App\Providers\EncryptionProvider::class
+        App\Providers\EncryptionProvider::class,
+        App\Providers\RepositoryProvider::class
     ],
 
     /*

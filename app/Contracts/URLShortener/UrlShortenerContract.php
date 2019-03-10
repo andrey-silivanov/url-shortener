@@ -12,16 +12,16 @@ interface UrlShortenerContract
     /**
      * Return short url
      *
-     * @param int $id
-     * @return mixed
+     * @param string $url
+     * @return string
      */
-    public function getShortUrl(int $id);
+    public function getShortUrl(string $url):string;
 
     /**
      * Return long url
      *
      * @param string $shortCode
-     * @return mixed
+     * @return string
      */
-    public function getLongUrl(string $shortCode);
+    public function getLongUrl(string $shortCode):string;
 }
